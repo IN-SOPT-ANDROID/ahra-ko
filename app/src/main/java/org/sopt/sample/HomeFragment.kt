@@ -1,15 +1,15 @@
-package com.sopt.week2
+package org.sopt.sample
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.sopt.week2.databinding.FragmentHomeBinding
+import androidx.fragment.app.Fragment
+import org.sopt.sample.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-    private var _binding: FragmentHomeBinding?=null
-    private val binding get() = requireNotNull(_binding) {"여기서 오류"}
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = requireNotNull(_binding) { "여기서 오류" }
 
     private val mockUserList = listOf<UserData>(
         UserData(
@@ -60,10 +60,11 @@ class HomeFragment : Fragment() {
     )
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater,container,false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

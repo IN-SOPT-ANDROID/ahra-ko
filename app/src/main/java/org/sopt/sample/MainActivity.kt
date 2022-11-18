@@ -1,10 +1,7 @@
-package com.sopt.week2
+package org.sopt.sample
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import com.sopt.week2.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val currentFragment = supportFragmentManager.findFragmentById(R.id.main_container)
-        if(currentFragment == null){
+        if (currentFragment == null) {
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.main_container, HomeFragment())

@@ -1,7 +1,7 @@
-package com.sopt.week2
+package org.sopt.sample
 
-data class UserData (
+data class UserData(
     val image: Int,
-    var title : String,
-    val name : String
+    var title: String,
+    val name: String
 )

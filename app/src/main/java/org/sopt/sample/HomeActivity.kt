@@ -1,11 +1,11 @@
-package com.sopt.week1
+package org.sopt.sample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.sopt.week1.databinding.ActivityHomeBinding
+import androidx.appcompat.app.AppCompatActivity
+import org.sopt.sample.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityHomeBinding
+    private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -13,7 +13,7 @@ class HomeActivity : AppCompatActivity() {
         setProfile()
     }
 
-    private fun setProfile(){
+    private fun setProfile() {
         val profileId = intent.getStringExtra("userId")
         val profileMbti = intent.getStringExtra("userMbti")
 

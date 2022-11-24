@@ -8,12 +8,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.main_container)
-        if (currentFragment == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .add(R.id.main_container, HomeFragment())
-                .commit()
-        }
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.main_container, HomeFragment())
+            .commit()
     }
 }

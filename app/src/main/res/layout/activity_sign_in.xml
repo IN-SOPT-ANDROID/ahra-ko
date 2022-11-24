@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".SignInActivity">
 
     <TextView
-        android:id="@+id/txt_signup_title"
+        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SIGNUP"
+        android:text="Welcome to SOPT"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
         android:textSize="16sp"/>
 
     <TextView
-        android:id="@+id/txt_signup_email"
+        android:id="@+id/txt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="EMAIL"
@@ -27,22 +27,22 @@
         android:layout_marginTop="32dp"
         android:layout_marginStart="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_signup_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_title"/>
 
     <EditText
-        android:id="@+id/edt_signup_email"
+        android:id="@+id/edt_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/txt_signup_email"
+        app:layout_constraintStart_toStartOf="@id/txt_email"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="40dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_signup_email"
+        app:layout_constraintTop_toBottomOf="@id/txt_email"
         android:layout_marginTop="20dp"
         android:hint="이메일을 입력하세요" />
 
 
     <TextView
-        android:id="@+id/txt_signup_pw"
+        android:id="@+id/txt_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="비밀번호"
@@ -50,51 +50,38 @@
         android:layout_marginTop="150dp"
         android:layout_marginStart="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_signup_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_title"/>
 
     <EditText
-        android:id="@+id/edt_signup_pw"
+        android:id="@+id/edt_pw"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/txt_signup_email"
+        app:layout_constraintStart_toStartOf="@id/txt_email"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="40dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_signup_pw"
+        app:layout_constraintTop_toBottomOf="@id/txt_pw"
         android:layout_marginTop="20dp"
         android:hint="비밀번호를 입력하세요"
         android:inputType="textPassword"/>
 
-    <TextView
-        android:id="@+id/txt_signup_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NAME"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_signup_pw"/>
-
-    <EditText
-        android:id="@+id/edt_signup_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/txt_signup_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_signup_name"
-        android:layout_marginTop="20dp"
-        android:hint="이름을 입력하세요" />
-
     <Button
-        android:id="@+id/btn_sign"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="회원가입완료"
-        app:layout_constraintStart_toStartOf="@id/edt_signup_name"
-        app:layout_constraintTop_toBottomOf="@+id/edt_signup_name"
-        app:layout_constraintEnd_toEndOf="@id/edt_signup_name"
+        android:text="LOGIN"
+        app:layout_constraintStart_toStartOf="@id/edt_pw"
+        app:layout_constraintTop_toBottomOf="@+id/edt_pw"
+        app:layout_constraintEnd_toEndOf="@id/edt_pw"
         android:layout_marginTop="40dp"/>
 
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SIGNUP"
+        app:layout_constraintStart_toStartOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        android:layout_marginTop="15dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

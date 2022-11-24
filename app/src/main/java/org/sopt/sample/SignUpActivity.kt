@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import org.sopt.sample.databinding.ActivitySignUpBinding
 import org.sopt.sample.remote.RequestSignUp
 import org.sopt.sample.remote.ResponseSignUp
@@ -15,8 +16,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SignUpActivity : AppCompatActivity() {
-    private var signupService = ServicePool.signUpService
     private lateinit var binding: ActivitySignUpBinding
+    private var signupService = ServicePool.signUpService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,71 +29,73 @@ class SignUpActivity : AppCompatActivity() {
         clickEvent()
     }
 
-    private fun isEmpty(): Boolean {
-        with(binding) {
-            if (!edtSignupEmail.text.toString().isBlank() && !edtSignupPw.text.toString().isBlank()
-                && !edtSignupName.text.toString().isBlank()) {
+    private fun isEmpty() : Boolean{
+        with(binding){
+            if (!edtSignupEmail.text.toString().isBlank() &&
+                !edtSignupPw.text.toString().isBlank() &&
+                !edtSignupName.text.toString().isBlank()) {
                 return true
             }
             return false
         }
     }
 
-    private fun btnActivated() {
-        with(binding) {
-            edtSignupEmail.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(p0: Editable?) {}
+    private fun btnActivated(){
+        with(binding){
+            edtSignupEmail.addTextChangedListener(object : TextWatcher{
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                override fun afterTextChanged(p0: Editable?) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     btnSign.isEnabled = isEmpty()
                 }
             })
-            edtSignupPw.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(p0: Editable?) {}
+            edtSignupPw.addTextChangedListener(object : TextWatcher{
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                override fun afterTextChanged(p0: Editable?) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     btnSign.isEnabled = isEmpty()
                 }
             })
-            edtSignupName.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(p0: Editable?) {}
-                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
-                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            edtSignupName.addTextChangedListener(object : TextWatcher{
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+                override fun afterTextChanged(p0: Editable?) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     btnSign.isEnabled = isEmpty()
                 }
             })
         }
     }
 
-    private fun clickEvent() {
-        with(binding) {
-            btnSign.setOnClickListener {
+    private fun clickEvent(){
+        with(binding){
+            btnSign.setOnClickListener{
                 signupService.signUp(
                     RequestSignUp(
-                        edtSignupEmail.text.toString(),
-                        edtSignupPw.text.toString(),
-                        edtSignupName.text.toString()
+                        binding.edtSignupEmail.text.toString(),
+                        binding.edtSignupPw.text.toString(),
+                        binding.edtSignupName.text.toString()
                     )
-                ).enqueue(object : Callback<ResponseSignUp> {
+                ).enqueue(object : Callback <ResponseSignUp> {
                     override fun onResponse(
                         call: Call<ResponseSignUp>,
                         response: Response<ResponseSignUp>
                     ) {
-                        Toast.makeText(this@SignUpActivity, "회원가입에 성공하였습니다.", Toast.LENGTH_SHORT)
-                            .show()
-                        startActivity(Intent(this@SignUpActivity, SignInActivity::class.java))
+                        if(response.isSuccessful){
+                            Toast.makeText(this@SignUpActivity, "회원가입 성공", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@SignUpActivity, SignInActivity::class.java)) //화면전환
+                            finish()
+                        }
+                        else{
+                            Toast.makeText(this@SignUpActivity,"회원가입 실패",Toast.LENGTH_SHORT).show()
+                        }
                     }
 
                     override fun onFailure(call: Call<ResponseSignUp>, t: Throwable) {
-                        Toast.makeText(this@SignUpActivity, "회원가입에 실패했습니다.", Toast.LENGTH_SHORT)
-                            .show()
+                        Toast.makeText(this@SignUpActivity,"서버오류",Toast.LENGTH_SHORT).show()
                     }
                 })
             }
         }
     }
-
 }

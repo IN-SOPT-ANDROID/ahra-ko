@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import org.sopt.sample.databinding.FragmentHomeBinding
+import org.sopt.sample.model.UserViewModel
 import org.sopt.sample.remote.ResponseUser
 import org.sopt.sample.remote.UserServicePool
 import retrofit2.Call

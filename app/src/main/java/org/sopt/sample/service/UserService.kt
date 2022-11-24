@@ -1,5 +1,6 @@
-package org.sopt.sample.remote
+package org.sopt.sample.service
 
+import org.sopt.sample.remote.ResponseUser
 import retrofit2.Call
 import retrofit2.http.GET
 

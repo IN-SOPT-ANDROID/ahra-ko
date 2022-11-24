@@ -3,6 +3,7 @@ package org.sopt.sample.remote
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
+import org.sopt.sample.service.UserService
 import retrofit2.Retrofit
 
 object UserApiFactory{

@@ -33,7 +33,7 @@ class SignInActivity : AppCompatActivity() {
                     response: Response<ResponseSignIn>
                 ) {
                     if(response.isSuccessful){
-                        val intent = Intent(this@SignInActivity, HomeActivity::class.java)
+                        val intent = Intent(this@SignInActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
@@ -48,7 +48,7 @@ class SignInActivity : AppCompatActivity() {
         }
 
         binding.btnSignup.setOnClickListener {
-            val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }

@@ -20,7 +20,7 @@ class SignInActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener{
             viewModel.login(
-                binding.edtEmail.text.toString(),
+                binding.edtId.text.toString(),
                 binding.edtPw.text.toString()
             )
         }

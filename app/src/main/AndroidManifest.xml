@@ -23,7 +23,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".SignUp.view.SignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,7 +37,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".SignIn.view.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

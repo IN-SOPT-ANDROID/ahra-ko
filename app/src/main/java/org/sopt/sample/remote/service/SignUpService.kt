@@ -1,7 +1,7 @@
-package org.sopt.sample.service
+package org.sopt.sample.remote.service
 
-import org.sopt.sample.remote.RequestSignUp
-import org.sopt.sample.remote.ResponseSignUp
+import org.sopt.sample.remote.api.RequestSignUp
+import org.sopt.sample.remote.api.ResponseSignUp
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST

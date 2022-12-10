@@ -1,4 +1,4 @@
-package org.sopt.sample
+package org.sopt.sample.User
 
 data class UserData(
     val image: Int,

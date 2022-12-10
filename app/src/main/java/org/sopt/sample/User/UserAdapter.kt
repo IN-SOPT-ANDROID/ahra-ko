@@ -1,11 +1,11 @@
-package org.sopt.sample
+package org.sopt.sample.User
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.sopt.sample.databinding.ItemLayoutBinding
-import org.sopt.sample.remote.ResponseUser
+import org.sopt.sample.remote.api.ResponseUser
 import com.bumptech.glide.Glide
 
 class UserAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

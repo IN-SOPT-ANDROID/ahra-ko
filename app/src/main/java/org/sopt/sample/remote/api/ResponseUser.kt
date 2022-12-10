@@ -1,4 +1,4 @@
-package org.sopt.sample.remote
+package org.sopt.sample.remote.api
 
 import kotlinx.serialization.Serializable
 

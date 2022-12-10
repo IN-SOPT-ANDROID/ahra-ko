@@ -1,4 +1,4 @@
-package org.sopt.sample
+package org.sopt.sample.Home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,13 +10,5 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
-
-    private fun setProfile() {
-        val profileId = intent.getStringExtra("userId")
-        val profileMbti = intent.getStringExtra("userMbti")
-
-        binding.tvProfileName.text = "이름 : $profileId"
-        binding.tvProfileMbti.text = "MBTI : $profileMbti"
     }
 }

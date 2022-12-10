@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">INSOPTAndroidPractice</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="inputId">제목을 입력하세요</string>
+    <string name="inputPw">비밀번호를 입력하세요</string>
+    <string name="inputName">이름을 입력하세요</string>
+    <string name="inputTitle">노래제목을 입력하세요</string>
+    <string name="inputSinger">가수를 입력하세요</string>
 </resources>
